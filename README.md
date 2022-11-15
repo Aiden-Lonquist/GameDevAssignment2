@@ -3,7 +3,7 @@
 Part 1:
 <br /><br />
 
-Part 2:
+<b>Part 2:</b>
 &nbsp;&nbsp;Line was added to define pDst[3] so that the destination alpha could be accessed. (Line 41)<br />
 &nbsp;&nbsp;MMX Mode:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] pointer lines to use pDst[3] instead. (Lines 51, 52)<br />
