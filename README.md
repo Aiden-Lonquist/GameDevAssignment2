@@ -4,17 +4,17 @@ Part 1:
 
 
 Part 2:
-  &nbsp;Line was added to define pDst[3] so that the destination alpha could be accessed. (Line 41)
-  &nbsp;MMX Mode:
-    &nbsp;&nbsp;changed pSrc[3] pointer lines to use pDst[3] instead. (Lines 51, 52)
-
-  &nbsp;Serial Mode:  
-    &nbsp;&nbsp;changed pSrc[3] to pDst[3] (Lines 188, 192, 196)
-
-  &nbsp;Intrinsic Mode:
-    &nbsp;&nbsp;changed pSrc[3] to pDst[3] (Line 216)
-
-
+&nbsp;Line was added to define pDst[3] so that the destination alpha could be accessed. (Line 41)<br />
+&nbsp;MMX Mode:<br />
+&nbsp;&nbsp;changed pSrc[3] pointer lines to use pDst[3] instead. (Lines 51, 52)<br />
+<br />
+&nbsp;Serial Mode:<br /> 
+&nbsp;&nbsp;changed pSrc[3] to pDst[3] (Lines 188, 192, 196)<br />
+<br />
+&nbsp;Intrinsic Mode:<br />
+&nbsp;&nbsp;changed pSrc[3] to pDst[3] (Line 216)<br />
+<br />
+<br />
 Part 3:
   Created an empty function "funcValue" that takes in a parameter as a value.
   when calling the function, the assembly looks like this:
