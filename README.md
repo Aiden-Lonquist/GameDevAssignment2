@@ -37,16 +37,16 @@ Part 3:<br />
 &nbsp;In the reference function the address of the memory for the parameter is used instead.<br />
 <br />
 <br />
-Part 4:
-  Created a function "funcMath" that does a simple math calculation.
-  When calling the function, the assembly looks like this:
-    funcMath();
-    call funcMath
-  
-  Created an inline function "funcMathInline" that does a simple math calculation.
-  When calling the function, the assembly looks like this:
-    funcMathInline();
-    call funcMathInline
-    
-  I didn't notice a difference between the inline function and the regular function
-  in assembly.
+Part 4:<br />
+&nbsp;Created a function "funcMath" that does a simple math calculation.<br />
+&nbsp;When calling the function, the assembly looks like this:<br />
+&nbsp;&nbsp;funcMath();<br />
+&nbsp;&nbsp;call funcMath<br />
+<br />
+&nbsp;Created an inline function "funcMathInline" that does a simple math calculation.<br />
+&nbsp;When calling the function, the assembly looks like this:<br />
+&nbsp;funcMathInline();<br />
+&nbsp;&nbsp;call funcMathInline<br />
+<br />
+&nbsp;I didn't notice a difference between the inline function and the regular function<br />
+&nbsp;in assembly.<br />
