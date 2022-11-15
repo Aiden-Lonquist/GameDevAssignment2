@@ -4,15 +4,15 @@ Part 1:
 
 
 Part 2:
-  Line was added to define pDst[3] so that the destination alpha could be accessed. (Line 41)
-  MMX Mode:
-    changed pSrc[3] pointer lines to use pDst[3] instead. (Lines 51, 52)
+  &nbsp;Line was added to define pDst[3] so that the destination alpha could be accessed. (Line 41)
+  &nbsp;MMX Mode:
+    &nbsp;&nbsp;changed pSrc[3] pointer lines to use pDst[3] instead. (Lines 51, 52)
 
-  Serial Mode:  
-    changed pSrc[3] to pDst[3] (Lines 188, 192, 196)
+  &nbsp;Serial Mode:  
+    &nbsp;&nbsp;changed pSrc[3] to pDst[3] (Lines 188, 192, 196)
 
-  Intrinsic Mode:
-    changed pSrc[3] to pDst[3] (Line 216)
+  &nbsp;Intrinsic Mode:
+    &nbsp;&nbsp;changed pSrc[3] to pDst[3] (Line 216)
 
 
 Part 3:
