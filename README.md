@@ -1,6 +1,6 @@
 # GameDevAssignment2
 
-Part 1:
+<b>Part 1:</b><br />
 <br /><br />
 
 <b>Part 2:</b><br />
@@ -15,7 +15,7 @@ Part 1:
 &nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] to pDst[3] (Line 216)<br />
 <br />
 <br />
-Part 3:<br />
+<b>Part 3:</b><br />
 &nbsp;&nbsp;Created an empty function "funcValue" that takes in a parameter as a value.<br />
 &nbsp;&nbsp;when calling the function, the assembly looks like this:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;funcValue(optarg);<br />
@@ -37,7 +37,7 @@ Part 3:<br />
 &nbsp;&nbsp;In the reference function the address of the memory for the parameter is used instead.<br />
 <br />
 <br />
-Part 4:<br />
+<b>Part 4:</b><br />
 &nbsp;&nbsp;Created a function "funcMath" that does a simple math calculation.<br />
 &nbsp;&nbsp;When calling the function, the assembly looks like this:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;funcMath();<br />
