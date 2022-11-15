@@ -31,6 +31,30 @@ typedef struct {
 	DWORD threadId;
 } BubbleThreadParams;
 
+//Functions for Part 3
+
+//Function that take value
+void funcValue(int i) {
+	//does nothing
+}
+
+//Function that takes reference
+void funcReference(int& i) {
+	//does nothing
+}
+
+//Functions for Part 4
+
+//Regular math function
+void funcMath() {
+	int i = 1 + 2;
+}
+
+//Inline math function
+inline void funcMathInline() {
+	int i = 1 + 2;
+}
+
 unsigned int tankDemoThread(void *data)
 {
 	BubbleThreadParams *params = (BubbleThreadParams *)data;
@@ -103,6 +127,15 @@ void startTankDemoThreads(const char *background, const char *bubble, const char
 int main(int argc, char* argv[])
 {
 	int optarg = 1;
+
+	//Part 3 Value vs Reference Parameters
+	funcValue(optarg);
+	funcReference(optarg);
+
+	//Part 4 Regular vs Inline Functions
+	funcMath();
+	funcMathInline();
+
 	while (optarg < argc) {
 		if ((argc - optarg) < 2) {
 			fprintf(stderr, "Usage: %s <background image> <bubble image>\n", argv[0]);
