@@ -6,9 +6,18 @@ Describe MMX mode (assembly)<br />
 <br />
 TODO<br />
 Describe Regular C++ mode<br />
+(rough copy below)
+This mode is written in regular c++
+It works by calculating the difference between the Src and Dst
+It then multiplies the destination by the difference between source and destination
+Lastly, it says that the destination is the temp answer from the previous line plus the original destination
+It does this for each color (R, G, B) and each pixel.
+Then in increments all of the colors and alphas for source and destination by one. 
 <br />
 TODO<br />
 Describe Intrinsic mode<br />
+
+
 <br />
 The fastest mode is MMX which is written in assembly<br />
 The second fastest mode is Intrinsic which uses registers<br />
