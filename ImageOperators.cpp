@@ -47,6 +47,7 @@ void blitBlend( UCImg &src, UCImg &dst, unsigned int dstXOffset, unsigned int ds
 		if (simdMode == SIMD_EMMX) {
 			for (unsigned x = X0; x < X1; x += 16) {
 				__asm {
+					//This block sets the pointer which will be used for the alpha blend factor
 					pxor xmm0, xmm0 // xmm0 <- 0
 					mov eax, dword ptr [pDst + 12] // changed this from pSrc to pDst to blend with destination image.
 					movdqu xmm1, [eax]; xmm1 <- *pDst[3] // changed this from pSrc to pDst to blend with destination image.
@@ -57,6 +58,7 @@ void blitBlend( UCImg &src, UCImg &dst, unsigned int dstXOffset, unsigned int ds
 
 					// blending the red;
 					// load d0
+					// uses pDst + 0 to get the red value
 					mov eax, dword ptr[pDst + 0]; 
 					movdqu xmm1, [eax]; // xmm1 = pDst[0]
 					movdqa xmm6, xmm1;
@@ -86,6 +88,7 @@ void blitBlend( UCImg &src, UCImg &dst, unsigned int dstXOffset, unsigned int ds
 					pmullw xmm5, xmm3; // xmm5 = s1 * a1
 					paddw xmm7, xmm5; // xmm7 = s1 * a1 + (ff - a1) * d1;
 					// shift the results;
+					// this is a bit shift by 8
 					psrlw xmm6, 8;
 					psrlw xmm7, 8;
 					// pack back
@@ -95,6 +98,7 @@ void blitBlend( UCImg &src, UCImg &dst, unsigned int dstXOffset, unsigned int ds
 
 					// blending the green;
 					// load d0
+					// uses pDst + 4 to get the green value
 					mov eax, dword ptr[pDst + 4]; 
 					movdqu xmm1, [eax]; // xmm1 = pDst[0]
 					movdqa xmm6, xmm1;
@@ -124,6 +128,7 @@ void blitBlend( UCImg &src, UCImg &dst, unsigned int dstXOffset, unsigned int ds
 					pmullw xmm5, xmm3; // xmm5 = s1 * a1
 					paddw xmm7, xmm5; // xmm7 = s1 * a1 + (ff - a1) * d1;
 					// shift the results;
+					// this is a bit shift by 8
 					psrlw xmm6, 8;
 					psrlw xmm7, 8;
 					// pack back
@@ -133,6 +138,7 @@ void blitBlend( UCImg &src, UCImg &dst, unsigned int dstXOffset, unsigned int ds
 
 					// blending the blue;
 					// load d0
+					// uses pDst + 8 to get the blue value
 					mov eax, dword ptr[pDst + 8]; 
 					movdqu xmm1, [eax]; // xmm1 = pDst[0]
 					movdqa xmm6, xmm1;
@@ -162,6 +168,7 @@ void blitBlend( UCImg &src, UCImg &dst, unsigned int dstXOffset, unsigned int ds
 					pmullw xmm5, xmm3; // xmm5 = s1 * a1
 					paddw xmm7, xmm5; // xmm7 = s1 * a1 + (ff - a1) * d1;
 					// shift the results;
+					// this is a bit shift by 8
 					psrlw xmm6, 8;
 					psrlw xmm7, 8;
 					// pack back
