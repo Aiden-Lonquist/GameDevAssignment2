@@ -16,12 +16,11 @@ Describe Regular C++ mode<br />
 <br />
 TODO<br />
 Describe Intrinsic mode<br />
-
-
 <br />
-The fastest mode is MMX which is written in assembly<br />
-The second fastest mode is Intrinsic which uses registers<br />
-The slowest mode is the regular c++<br />
+Speed of Modes:<br />
+&nbsp;&nbsp;The fastest mode is MMX which is written in assembly<br />
+&nbsp;&nbsp;The second fastest mode is Intrinsic which uses registers<br />
+&nbsp;&nbsp;The slowest mode is the regular c++<br />
 
 <br /><br />
 
