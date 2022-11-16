@@ -4,12 +4,23 @@
 Note: Aside from the comments in this file, the code is also commented.<br />
 <br />
 <b>Describe MMX mode:</b><br />
-<br />
+&nbsp;&nbsp;The first block of this mode defines a pointer to the alpha blend factor that will be used<br />
+&nbsp;&nbsp;It originally was pointing to pSrc[3] but was changed to pDst[3] for part 2.<br />
+&nbsp;&nbsp;The next block handles the blending of the red<br />
+&nbsp;&nbsp;It starts by creating a pointer to the destination[0] which is red.<br />
+&nbsp;&nbsp;Next, it interleaves the low half and after that the high half much like the intrinsic mode<br />
+&nbsp;&nbsp;Then, it gets the pointer for the source red.<br />
+&nbsp;&nbsp;Again, it does the functions for low bits first and then high bits<br />
+&nbsp;&nbsp;The results are bit shifted by 8 and then replace the destination<br />
+&nbsp;&nbsp;The same process repeats for green and then blue.<br />
+&nbsp;&nbsp;The difference for green is that pSrc and pDst are now called with + 4 to point to green<br />
+&nbsp;&nbsp;For blue it's the same but + 8 instead of + 4.<br />
 <br />
 <b>Describe Regular C++ mode:</b><br />
 &nbsp;&nbsp;This mode is written in regular c++<br />
 &nbsp;&nbsp;It works by calculating the difference between the Src and Dst<br />
 &nbsp;&nbsp;It then multiplies the destination by the difference between source and destination<br />
+&nbsp;&nbsp;It also bit shifts the result by 8 on this line<br />
 &nbsp;&nbsp;Lastly, it says that the destination is the temp answer from the previous line plus the original destination<br />
 &nbsp;&nbsp;It does this for each color (R, G, B) and each pixel.<br />
 &nbsp;&nbsp;Then in increments all of the colors and alphas for source and destination by one. <br />
