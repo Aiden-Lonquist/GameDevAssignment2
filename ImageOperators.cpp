@@ -181,20 +181,20 @@ void blitBlend( UCImg &src, UCImg &dst, unsigned int dstXOffset, unsigned int ds
 			}
 		} else if (simdMode == SIMD_NONE) {
 			for (unsigned int x = X0; x < X1; x++) {
-				short diff;
-				short tmp;
+				short diff; // short int for difference between source and destination
+				short tmp; // short int for storing a temporary value of destination times difference (and bit shifted by 8)
 
-				diff = *pSrc[0] - *pDst[0];
-				tmp = short(*pDst[3] * diff) >> 8; //changed this from pSrc to pDst to use destination alpha.
-				*pDst[0] = tmp + *pDst[0];
+				diff = *pSrc[0] - *pDst[0]; // calculates difference between source and destination
+				tmp = short(*pDst[3] * diff) >> 8; // changed this from pSrc to pDst to use destination alpha.
+				*pDst[0] = tmp + *pDst[0]; // assigns destination new value of temp plus destination
 
-				diff = *pSrc[1] - *pDst[1];
-				tmp = short(*pDst[3] * diff) >> 8; //changed this from pSrc to pDst to use destination alpha.
-				*pDst[1] = tmp + *pDst[1];
+				diff = *pSrc[1] - *pDst[1]; // calculates difference between source and destination
+				tmp = short(*pDst[3] * diff) >> 8; // changed this from pSrc to pDst to use destination alpha.
+				*pDst[1] = tmp + *pDst[1]; // assigns destination new value of temp plus destination
 
-				diff = *pSrc[2] - *pDst[2];
-				tmp = short(*pDst[3] * diff) >> 8; //changed this from pSrc to pDst to use destination alpha.
-				*pDst[2] = tmp + *pDst[2];
+				diff = *pSrc[2] - *pDst[2]; // calculates difference between source and destination
+				tmp = short(*pDst[3] * diff) >> 8; // changed this from pSrc to pDst to use destination alpha.
+				*pDst[2] = tmp + *pDst[2]; // assigns destination new value of temp plus destination
 
 				pSrc[0] += 1;
 				pSrc[1] += 1;
@@ -209,14 +209,15 @@ void blitBlend( UCImg &src, UCImg &dst, unsigned int dstXOffset, unsigned int ds
 		} else if (simdMode == SIMD_EMMX_INTRINSICS) {
 
 			for (unsigned x = X0; x < X1; x += 16) {
-				register __m128i s0, s1, d0, d1, a0, a1, r0, r1, zero;
-				register __m128i diff0, tmp0, diff1, tmp1, t;
-				zero = _mm_setzero_si128();
+				register __m128i s0, s1, d0, d1, a0, a1, r0, r1, zero; // stores several variables in register process
+				register __m128i diff0, tmp0, diff1, tmp1, t; // several more variables in register
+				zero = _mm_setzero_si128(); // runs with all elements set to 0
 				// load alpha
 				t = _mm_loadu_si128((__m128i *) pDst[3]); //changed this from pSrc to pDst to use destination alpha.
-				a0 = _mm_unpacklo_epi8(t, zero);
-				a1 = _mm_unpackhi_epi8(t, zero);
+				a0 = _mm_unpacklo_epi8(t, zero); // unpacks and interleaves 8-bit integers from low half
+				a1 = _mm_unpackhi_epi8(t, zero); // unpacks and interleaves 8-bit integers from high half
 
+				// function calls to do the blending for each colour.
 			    EMMX_BLEND(0);
 				EMMX_BLEND(1);
 				EMMX_BLEND(2);

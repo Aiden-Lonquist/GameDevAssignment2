@@ -1,12 +1,13 @@
 # GameDevAssignment2
 
-<b>Part 1:</b><br />
-TODO<br />
-Describe MMX mode (assembly)<br />
+<h2>Part 1:</h2><br />
 <br />
-TODO<br />
-Describe Regular C++ mode<br />
-&nbsp;&nbsp;(rough copy below)<br />
+&nbsp;&nbsp;Aside from the comments in this file, the code is also commented.
+<br />
+<b>Describe MMX mode:</b><br />
+<br />
+<br />
+<b>Describe Regular C++ mode:</b><br />
 &nbsp;&nbsp;This mode is written in regular c++<br />
 &nbsp;&nbsp;It works by calculating the difference between the Src and Dst<br />
 &nbsp;&nbsp;It then multiplies the destination by the difference between source and destination<br />
@@ -14,17 +15,22 @@ Describe Regular C++ mode<br />
 &nbsp;&nbsp;It does this for each color (R, G, B) and each pixel.<br />
 &nbsp;&nbsp;Then in increments all of the colors and alphas for source and destination by one. <br />
 <br />
-TODO<br />
-Describe Intrinsic mode<br />
+<b>Describe Intrinsic mode:</b><br />
+&nbsp;&nbsp;This mode is written in c++ but makes use of registers.<br />
+&nbsp;&nbsp;It starts by assigning several variables to registers instead of storing them in regular memory.<br />
+&nbsp;&nbsp;It then runs the setzero function with means all elements will start at 0<br />
+&nbsp;&nbsp;Next, it unpacks and interleaves 8-bit integers from low half<br />
+&nbsp;&nbsp;After, it unpacks and interleaves 8-bit integers from high half<br />
+&nbsp;&nbsp;Then, it calls the blend function for each color (R, G, B)<br />
 <br />
-Speed of Modes:<br />
+<b>Speed of Modes:</b><br />
 &nbsp;&nbsp;The fastest mode is MMX which is written in assembly<br />
 &nbsp;&nbsp;The second fastest mode is Intrinsic which uses registers<br />
 &nbsp;&nbsp;The slowest mode is the regular c++<br />
 
 <br /><br />
 
-<b>Part 2:</b><br />
+<h2>Part 2:</h2><br />
 &nbsp;&nbsp;Line was added to define pDst[3] so that the destination alpha could be accessed. (Line 41)<br />
 &nbsp;&nbsp;MMX Mode:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] pointer lines to use pDst[3] instead. (Lines 51, 52)<br />
@@ -36,8 +42,8 @@ Speed of Modes:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] to pDst[3] (Line 216)<br />
 <br />
 <br />
-<b>Part 3:</b><br />
-&nbsp;&nbsp;Created an empty function "funcValue" that takes in a parameter as a value.<br />
+<h2>Part 3:</h2><br />
+&nbsp;&nbsp;Created an empty function <b>"funcValue"</b> that takes in a parameter as a value.<br />
 &nbsp;&nbsp;when calling the function, the assembly looks like this:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;funcValue(optarg);<br />
 &nbsp;&nbsp;&nbsp;&nbsp;mov &nbsp;&nbsp;&nbsp;eax, dword ptr [optarg]<br />
@@ -45,7 +51,7 @@ Speed of Modes:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;call&nbsp;&nbsp;&nbsp;funcValue (03BCCA3h)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;add &nbsp;&nbsp;&nbsp;esp, 4<br />
 <br />
-&nbsp;&nbsp;Created another empty function "funcReference" that takes in a parameter as a reference<br />
+&nbsp;&nbsp;Created another empty function <b>"funcReference"</b> that takes in a parameter as a reference<br />
 &nbsp;&nbsp;When calling the function, the assembly looks like this:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;funcReference(optarg);<br />
 &nbsp;&nbsp;&nbsp;&nbsp;lea &nbsp;&nbsp;&nbsp;eax, [optarg]<br />
@@ -58,13 +64,13 @@ Speed of Modes:<br />
 &nbsp;&nbsp;In the reference function the address of the memory for the parameter is used instead.<br />
 <br />
 <br />
-<b>Part 4:</b><br />
-&nbsp;&nbsp;Created a function "funcMath" that does a simple math calculation.<br />
+<h2>Part 4:</h2><br />
+&nbsp;&nbsp;Created a function <b>"funcMath"</b> that does a simple math calculation.<br />
 &nbsp;&nbsp;When calling the function, the assembly looks like this:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;funcMath();<br />
 &nbsp;&nbsp;&nbsp;&nbsp;call&nbsp;&nbsp;&nbsp;funcMath<br />
 <br />
-&nbsp;&nbsp;Created an inline function "funcMathInline" that does a simple math calculation.<br />
+&nbsp;&nbsp;Created an inline function <b>"funcMathInline"</b> that does a simple math calculation.<br />
 &nbsp;&nbsp;When calling the function, the assembly looks like this:<br />
 &nbsp;&nbsp;funcMathInline();<br />
 &nbsp;&nbsp;&nbsp;&nbsp;call&nbsp;&nbsp;&nbsp;funcMathInline<br />
