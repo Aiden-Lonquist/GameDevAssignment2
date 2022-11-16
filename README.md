@@ -1,7 +1,7 @@
 # GameDevAssignment2
 
 <h2>Part 1:</h2><br />
-Note: Aside from the comments in this file, the code is also commented.
+Note: Aside from the comments in this file, the code is also commented.<br />
 <br />
 <b>Describe MMX mode:</b><br />
 <br />
