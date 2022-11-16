@@ -6,13 +6,13 @@ Describe MMX mode (assembly)<br />
 <br />
 TODO<br />
 Describe Regular C++ mode<br />
-(rough copy below)
-This mode is written in regular c++
-It works by calculating the difference between the Src and Dst
-It then multiplies the destination by the difference between source and destination
-Lastly, it says that the destination is the temp answer from the previous line plus the original destination
-It does this for each color (R, G, B) and each pixel.
-Then in increments all of the colors and alphas for source and destination by one. 
+&nbsp;&nbsp;(rough copy below)<br />
+&nbsp;&nbsp;This mode is written in regular c++<br />
+&nbsp;&nbsp;It works by calculating the difference between the Src and Dst<br />
+&nbsp;&nbsp;It then multiplies the destination by the difference between source and destination<br />
+&nbsp;&nbsp;Lastly, it says that the destination is the temp answer from the previous line plus the original destination<br />
+&nbsp;&nbsp;It does this for each color (R, G, B) and each pixel.<br />
+&nbsp;&nbsp;Then in increments all of the colors and alphas for source and destination by one. <br />
 <br />
 TODO<br />
 Describe Intrinsic mode<br />
