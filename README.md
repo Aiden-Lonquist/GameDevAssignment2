@@ -37,7 +37,7 @@ Note: Aside from the comments in this file, the code is also commented.<br />
 &nbsp;&nbsp;The fastest mode is MMX which is written in assembly<br />
 &nbsp;&nbsp;The second fastest mode is Intrinsic which uses registers<br />
 &nbsp;&nbsp;The slowest mode is the regular c++<br />
-
+<br />
 <b>Reasoning:</b><br />
 &nbsp;&nbsp;Assembly is the fastest because it is the closest to machine code of the three modes when it comes to translation. <br />
 &nbsp;&nbsp;It also uses CPU registers to store values, which can be written to and read from almost instantaneously.<br />
