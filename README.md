@@ -38,6 +38,14 @@ Note: Aside from the comments in this file, the code is also commented.<br />
 &nbsp;&nbsp;The second fastest mode is Intrinsic which uses registers<br />
 &nbsp;&nbsp;The slowest mode is the regular c++<br />
 
+<b>Reasoning:</b><br />
+&nbsp;&nbsp;Assembly is the fastest because it is the closest to machine code of the three modes when it comes to translation. <br />
+&nbsp;&nbsp;It also uses CPU registers to store values, which can be written to and read from almost instantaneously.<br />
+&nbsp;&nbsp;Regular C++ is the slowest of the three since it is the farthest from machine code from the three. <br />
+&nbsp;&nbsp;It also uses main memory to store values, which is much slower than using registers.<br />
+&nbsp;&nbsp;Intrinsics is the middle of the three. It has functions that perform assembly instructions and also uses CPU registers, <br />
+&nbsp;&nbsp;but because it's still written in C++, it still needs more time to be translated to machine code than pure assembly.<br />
+
 <br /><br />
 
 <h2>Part 2:</h2><br />
