@@ -43,13 +43,13 @@ Note: Aside from the comments in this file, the code is also commented.<br />
 <h2>Part 2:</h2><br />
 &nbsp;&nbsp;Line was added to define pDst[3] so that the destination alpha could be accessed. (Line 41)<br />
 &nbsp;&nbsp;MMX Mode:<br />
-&nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] pointer lines to use pDst[3] instead. (Lines 51, 52)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] pointer lines to use pDst[3] instead. (Lines 52, 53)<br />
 <br />
 &nbsp;&nbsp;Serial Mode:<br /> 
-&nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] to pDst[3] (Lines 188, 192, 196)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] to pDst[3] (Lines 195, 199, 203)<br />
 <br />
 &nbsp;&nbsp;Intrinsic Mode:<br />
-&nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] to pDst[3] (Line 216)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;changed pSrc[3] to pDst[3] (Line 223)<br />
 <br />
 <br />
 <h2>Part 3:</h2><br />
